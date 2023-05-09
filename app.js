@@ -2,38 +2,47 @@ let purchasePrice = document.querySelector("#purchase-price");
 let stockQuantity = document.querySelector("#stock-quantity");
 let currentPrice= document.querySelector("#current-price");
 let submitBtn = document.querySelector("#submit-btn");
-let output= document.querySelector("#outputs");
-
+let output= document.querySelector("#output");
+ 
 function submitHandler(){
+
     let pur = Number(purchasePrice.value);
     let qut = Number(stockQuantity.value);
     let curr = Number(currentPrice.value);
     calculateProfitAndLoss(pur,qut,curr)
 
 }
+
+
 function calculateProfitAndLoss(purchase , quantity, current){
-    if(purchase>current)
+    if (purchase <= 0 || quantity <= 0 || current <= 0) {
+        showMessage( "Please enter valid inputs");
+    }
+
+    else if(purchase > current)
     {
         let loss = (purchase-current) * quantity;
-        let lossPercentage = (loss/purchase) * 100
-        showOutput(`The loss is ${loss} and the loss percentage is ${lossPercentage} `)
+        let lossPercentage =  (loss / (purchase * quantity)) * 100;
+        showMessage(`The loss is ${loss} and the loss percentage is ${lossPercentage} `)
+        output.style.backgroundColor = 'red';
 
     }
-    else if(current>purchase)
+    else if(current > purchase)
     {
         let profit = (current-purchase)*quantity;
-        let profitPercentage = (profit/purchase)*100
-        showOutput(`The profit is ${profit} and the profit percentage is ${profitPercentage}`);
+        let profitPercentage =  (profit / (purchase * quantity)) * 100;
+        showMessage(`The profit is ${profit} and the profit percentage is ${profitPercentage}`);
+        output.style.backgroundColor = 'green';
+        output.style.color='white'
     }
     else{
-        showOutput("no pain no gain");
+        showMessage("no pain no gain");
     }
 
 }
-calculateProfitAndLoss(120,10, 100)
 
-
-function showOutput(message){
+function showMessage(message) {
     output.innerHTML = message;
 }
-stockQuantity.addEventListener("click",submitHandler())
+
+submitBtn.addEventListener("click",submitHandler);

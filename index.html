@@ -6,27 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Check Profit/Loss on your Stock</h1>
 
-    <label for="purchase-price">Purchase Price
-        <input type="number" id="purchase-price" placeholder="Enter Cost Price of Stock">
-    </label>
+    <div class="container-center container">
+        <h1>Check Profit/Loss on your Stock</h1>
+        <div class="row container-center">
+            <label for="purchase-price">Purchase Price
+                <input type="number" id="purchase-price" placeholder="Enter Cost Price of Stock">
+            </label>
+        </div>
+        <div class="row container-center">
+            <label for="stock-quantity">Stock Quantity
+                <input type="number" id="stock-quantity" placeholder="Enter Quantity of Stock">
+            </label>
+        </div>
+        <div class="row container-center">
+            <label for="current-price">Current Price
+                <input type="number" id="current-price" placeholder="Enter Current price of Stock">
+            </label>
+        </div>
+        <div class="row container-center">
+            <button id="submit-btn"> Submit</button>
+        </div>
 
-    <label for="stock-quantity">Stock Quantity
-        <input type="number" id="stock-quantity" placeholder="Enter Quantity of Stock">
-    </label>
+            <div class="output-box">
+                <div id="output"></div>
+            </div>
 
-    <label for="Current-price">Current Price
-        <input type="number" id="Current-price" placeholder="Enter Current price of Stock">
-    </label>
+        </div>
 
-    <button id="submit-btn"> Submit</button>
+        </main>
+    </div>
 
-    <div id="output"></div>
 
+     <footer class="footer">
+        <div class="footer-header">get in touch</div>
+
+        <ul class="social-links ">
+            <li class="list-item-inline">
+                <a href="https://twitter.com/swathi_sb" class="link" target="blank">
+                    <img src="./image/twitter.svg" alt="Twitter link" class="footer-icon">
+                </a>
+            </li>
+            <li class="list-item-inline">
+                <a href="https://github.com/swathiisb" class="link" target="blank">
+                    <img src="./image/github.svg" alt="gitHub link" class="footer-icon">
+                </a>
+            </li>
+            <li class="list-item-inline">
+                <a href="https://www.linkedin.com/in/swathisb/" class="link" target="blank">
+                    <img src="./image/linkedin.svg" alt="linkedin link" class="footer-icon">
+                </a>
+            </li>
+        </ul>
+
+    </footer> 
+    <script src="app.js"></script>
 </body>
 
 </html>
