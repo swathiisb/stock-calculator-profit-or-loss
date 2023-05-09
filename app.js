@@ -23,7 +23,7 @@ function calculateProfitAndLoss(purchase , quantity, current){
     {
         let loss = (purchase-current) * quantity;
         let lossPercentage =  (loss / (purchase * quantity)) * 100;
-        showMessage(`The loss is ${loss} and the loss percentage is ${lossPercentage} `)
+        showMessage(`The loss is  Rs ${loss} and the loss percentage is ${lossPercentage}%`)
         output.style.backgroundColor = 'red';
 
     }
@@ -31,7 +31,7 @@ function calculateProfitAndLoss(purchase , quantity, current){
     {
         let profit = (current-purchase)*quantity;
         let profitPercentage =  (profit / (purchase * quantity)) * 100;
-        showMessage(`The profit is ${profit} and the profit percentage is ${profitPercentage}`);
+        showMessage(`The profit is  Rs ${profit}  and the profit percentage is ${profitPercentage}%`);
         output.style.backgroundColor = 'green';
         output.style.color='white'
     }
