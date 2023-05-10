@@ -40,14 +40,13 @@ h1{
 input{
     padding: 1rem;
     color: #4b5563;
-    font-size: 5rem;
+    font-size: 1rem;
     border: none;
     box-shadow: 0 1px 18px rgba(146,161,176,.15);
     border-radius: 0.5rem;
     width:100%;
     margin-left:1.5rem;
     display: inline-block;
-
 }
 
 label{
@@ -57,7 +56,8 @@ label{
     margin-left:2rem;
     display: inline-block;
     padding:10px;
-    font-size: x-large;
+    font-weight: 300px;
+
     
 }
 
@@ -157,6 +157,10 @@ img{
     width: 100%;
     object-fit: cover;
 }
+img:hover{
+    background-color: black;
+    color: black;
+}
 
 @media (max-width: 500px) {
     body{
@@ -198,11 +202,17 @@ img{
     }
 
     label{
-        width:100%;
+        width:80%;
         margin: auto;
     }
+    input{
+        width:70%;
+        margin:fit-content;
+        align-content: left;
+        justify-content: left;
+        border:1px solid black;
+    }
 }
-
 
 
 
